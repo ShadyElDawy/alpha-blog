@@ -41,11 +41,16 @@ $navbar-default-bg: black;
         font-family: monospace;
     }
 
-    // .btn-xlarge:hover {
 
-    //     background-color: red;
-    //     box-shadow: red;
-    // }
+.article-actions {
+    border-top: 1px solid #eaeaea;
+    padding-top: 5px;
+}
+
+.description {
+    margin-top: 0;
+
+}
 
 footer {
 
@@ -72,3 +77,4 @@ footer ul li {
     float: left;
     margin-left: 15px;
 }
+
