@@ -20,11 +20,16 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
     <%= render 'layouts/navigation'%>  
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1">
     <% flash.each do |name, msg| %>
-      <ul>
-        <li><%= msg %></li>
-      </ul>
+        <div class='alert alert-<%= "#{name}" %>'>
+          <a href="#" class="close" data-dismiss="alert"> &#215;</a>
+          <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+        </div>
       <% end %>
+    </div>
+  </div>
       <div class="container">
     <%= yield %>
     </div>
