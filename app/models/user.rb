@@ -1,7 +1,7 @@
 class User < ApplicationRecord
 
 
-  has_many :articles
+  has_many :articles, dependent: :destroy  #dependent means once user is deleted, delete all articles of this user
   before_save {self.email = email.downcase}
   validates :username, presence: true, length: {minimum: 3, maximum: 25}, uniqueness: {case_sensitive: false}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
