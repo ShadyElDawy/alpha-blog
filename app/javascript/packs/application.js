@@ -18,7 +18,11 @@ $(document).ready(function(){
     $('.dropdown-toggle').dropdown();
 });
 
-//= require jquery
+
+
+
+
+//= require jquery3
 //= require jquery-ui
 //= require popper
 //= require bootstrap-sprockets
