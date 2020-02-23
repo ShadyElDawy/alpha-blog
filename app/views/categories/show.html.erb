@@ -1,7 +1,10 @@
-<h1 align="center"><%= "Category: " + @category.name # @category is defined in show action in controller %></h1>
+<h1 align="center"><%= "Category: " + @category.name %></h1> <!-- @category is defined in show action in controller -->
 
 <div align="center">
-	<%= will_paginate @category_articles #this object is defined in show action in categories controller%> 
+	<% if logged_in? and current_user.admin? %>
+		<span class="badge"><%= link_to "Edit Category Name", edit_category_path(@category) %></span>
+	<% end %>
+	<%= will_paginate @category_articles %> <!-- #this object is defined in show action in categories controller --> 
 </div>
 
 
