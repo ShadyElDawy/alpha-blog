@@ -1,0 +1,12 @@
+<h1 align="center"><%= "Category: " + @category.name # @category is defined in show action in controller %></h1>
+
+<div align="center">
+	<%= will_paginate @category_articles #this object is defined in show action in categories controller%> 
+</div>
+
+
+<%= render 'articles/article', obj: @category_articles %>
+
+<div align="center">
+	<%= will_paginate @category_articles %>
+</div>

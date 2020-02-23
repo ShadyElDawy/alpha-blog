@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
 
 	def create
 
-		@article = Article.new(article_params)
+		@article = Article.new(article_params) #every time article is created, all parameters from submission form is attached to this article (title and desc and array of categories)
 		@article.user = current_user #the logged in user is attached to the new article he creates
 		if @article.save
 			flash[:success] = "Article was saved succefully"
@@ -56,7 +56,7 @@ class ArticlesController < ApplicationController
 			@article = Article.find(params[:id])
 		end
 		def article_params
-			params.require(:article).permit(:title, :description)
+			params.require(:article).permit(:title, :description, category_ids: []) #to send submission of checkbox categories we have to send an array of checked categories
 		end
 
 		def require_same_user #checks if user is not the owner of the article nor an admin

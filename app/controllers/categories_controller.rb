@@ -26,6 +26,9 @@ class CategoriesController < ApplicationController
 	end
 
 	def show
+		#for showing single category article we have to define following to use in show page of categories
+		@category = Category.find(params[:id])
+		@category_articles = @category.articles.paginate(page: params[:page], per_page: 5)
 
 	end
 
